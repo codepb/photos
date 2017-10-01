@@ -10,8 +10,12 @@ const Caption = (props) => {
 }
 
 export const CaptionTitle = (props) => {
-    const { children, ...otherProps } = props;
-    return (<h4 {...otherProps}>{children}</h4>)
+    const { children, style, ...otherProps } = props;
+    const titleStyle = {
+        margin: 0,
+        ...style
+    }
+    return (<h4 style={titleStyle} {...otherProps}>{children}</h4>)
 }
 
 export const CaptionBody = (props) => {
