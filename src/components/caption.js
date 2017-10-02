@@ -1,30 +1,33 @@
 import * as React from 'react';
-
-const Caption = (props) => {
-    const { children, style, ...otherProps } = props;
-    const captionStyle = {
-        textAlign: 'left',
-        ...style
+import injectSheet from 'react-jss';
+const captionStyles = {
+    caption: {
+        textAlign: 'left'
     }
-    return (<div style={captionStyle} {...otherProps}>{children}</div>)
 }
 
-export const CaptionTitle = (props) => {
-    const { children, style, ...otherProps } = props;
-    const titleStyle = {
-        margin: 0,
-        ...style
+const Caption = injectSheet(captionStyles)(({ children, classes, ...otherProps}) => (
+   <div className={classes.caption} {...otherProps}>{children}</div>)
+);
+
+const titleStyles = {
+    title: {
+        margin: 0
     }
-    return (<h4 style={titleStyle} {...otherProps}>{children}</h4>)
 }
 
-export const CaptionBody = (props) => {
-    const { children, style, ...otherProps } = props;
-    const bodyStyle = {
-        fontSize: 11,
-        ...style
+export const CaptionTitle = injectSheet(titleStyles)(({ children, classes, ...otherProps}) => (
+    <h4 className={classes.title} {...otherProps}>{children}</h4>
+));
+
+const bodyStyles = {
+    body: {
+        fontSize: 11
     }
-    return (<div style={bodyStyle} { ...otherProps }>{ children }</div>)
 }
+
+export const CaptionBody = injectSheet(bodyStyles)(( {classes, children, ...otherProps}) => (
+    <div className={classes.body} { ...otherProps }>{ children }</div>
+));
 
 export default Caption;
