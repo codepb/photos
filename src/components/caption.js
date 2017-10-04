@@ -7,7 +7,7 @@ const captionStyles = {
 }
 
 const Caption = injectSheet(captionStyles)(({ children, classes, ...otherProps}) => (
-   <div className={classes.caption} {...otherProps}>{children}</div>)
+   <caption className={classes.caption} {...otherProps}>{children}</caption>)
 );
 
 const titleStyles = {
