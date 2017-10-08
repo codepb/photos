@@ -1,16 +1,16 @@
 import * as React from 'react';
+import CenterChildren from '../components/centerChildren';
 
-const Home = () => (
-    <div style={{
-        width: '100vw',
-        height: '100vh',
-        background: 'url("/photos/Bassenthwaite-3.jpg")',
-        backgroundSize: 'cover',
-        display: 'flex',
-        justifyContent: 'top',
-        alignItems: 'left'
-        }}>
-        <h1 style={{color: '#000', fontFamily: 'raleway', fontWeight: 300, fontSize: 34, textTransform: 'uppercase', marginLeft: 20}}>Paul Burgess Photography</h1></div>
+const Home = () => ([
+    <h1 key="title" style={{color: '#000', fontFamily: 'raleway', fontWeight: 300, fontSize: 34, textAlign: 'left', textTransform: 'uppercase', marginLeft: 20}}>Paul Burgess Photography</h1>,
+    <CenterChildren key="image">
+        <div style={{
+            width: '90vw',
+            height: '80vh',
+            background: 'url("/photos/Gibsons Cave-1.jpg") no-repeat center center fixed',
+            backgroundSize: 'cover'
+            }}></div>
+    </CenterChildren>]
 )
 
 export default Home;
