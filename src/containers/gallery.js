@@ -20,10 +20,12 @@ function preloadImage(src) {
 export default class GalleryContainer extends React.Component {
     constructor(props) {
         super(props);
+        console.log(props.match.params);
+        const currentIndex = props.match.params.index ? props.match.params.index * 1 : 0
         this.state = {
-            currentImageIndex: 0,
-            previousImageIndex: images.length - 1,
-            nextImageIndex: 1
+            currentImageIndex: currentIndex,
+            previousImageIndex: currentIndex === 0 ? images.length - 1 : currentIndex - 1,
+            nextImageIndex: currentIndex + 1 % images.length
         }
     }
 
