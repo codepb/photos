@@ -13,17 +13,18 @@ const styles = (theme) => ({
             textDecoration: 'none',
             textTransform: 'uppercase',
             verticalAlign: 'baseline',
-            '&:hover': {
+            '&:hover,&.active': {
                 color: '#000',
                 fontWeight: 500
             }
         }
-    }
+    },
+   
 });
 
 const Menu = ({classes, children, ...otherProps}) => (
     <nav className={classes.menu} {...otherProps}>
-        <NavLink to="/gallery" >Gallery</NavLink>
+        <NavLink to="/gallery">Gallery</NavLink>
     </nav>
 )
 

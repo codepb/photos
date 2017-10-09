@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Gallery from 'react-photo-gallery';
+import Header from '../components/header';
+import CenterChildren from '../components/centerChildren';
 
 const PhotoSet = [
     {src: '/photos/IMG_0029.jpg', width: 5544, height: 3696},
@@ -17,8 +19,11 @@ export default class Sample extends React.Component {
     }
 
     render() {
-        return (
-            <Gallery photos={PhotoSet} onClick={this.navigateToGallery}/>
-        );
+        return [
+            <Header key="header"/>,
+            <CenterChildren key="gallery" style={{width: 'calc(100vw - 80px)', position: 'relative', marginLeft: 40, marginBottom: 30}}>
+                <Gallery photos={PhotoSet} onClick={this.navigateToGallery}/>
+            </CenterChildren>
+        ];
     }
 }
