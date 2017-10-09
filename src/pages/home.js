@@ -3,8 +3,11 @@ import CenterChildren from '../components/centerChildren';
 import Menu from '../components/menu';
 
 const Home = () => ([
-    <h1 key="title" style={{color: '#000', fontFamily: 'raleway', fontWeight: 300, fontSize: 24, textAlign: 'left', textTransform: 'uppercase', marginLeft: 40, display: 'inline-block'}}>Paul Burgess Photography</h1>,
-    <Menu key="menu" style={{display: 'inline-block'}}/>,
+    <header key="title" style={{display: 'flex', flexDirection: 'row'}}>
+        <h1 style={{color: '#000', fontFamily: 'raleway', fontWeight: 300, fontSize: 24, textAlign: 'left', textTransform: 'uppercase', marginLeft: 40, marginTop:16, marginBottom: 16, display: 'inline-block'}}>Paul Burgess Photography</h1>
+        <div style={{flex: 1}} />
+        <Menu style={{marginRight: 40, marginTop:16, marginBottom: 16}}/>
+    </header>,
     <CenterChildren key="image" style={{width: 'calc(100vw - 80px)', height: 'calc(100vh - 92px)', position: 'relative', marginLeft: 40, marginBottom: 30}}>
         <div style={{
             width: '100%',
