@@ -15,7 +15,7 @@ const PhotoSet = [
 
 export default class Sample extends React.Component {
     navigateToGallery = (ev, image) => {
-        this.props.history.push(`/galleryPage/${image.index}`)
+        this.props.history.push(`/gallery/${image.index}`)
     }
 
     render() {

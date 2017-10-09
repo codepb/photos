@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Swiper from '../components/swiper';
 import GalleryPage from '../components/galleryPage';
 
 const images = [
@@ -20,11 +21,11 @@ function preloadImage(src) {
 export default class GalleryContainer extends React.Component {
     constructor(props) {
         super(props);
-        const currentIndex = props.match.params.index ? props.match.params.index * 1 : 0
+        const currentIndex = props.index ? props.index * 1 : 0
         this.state = {
             currentImageIndex: currentIndex,
             previousImageIndex: currentIndex === 0 ? images.length - 1 : currentIndex - 1,
-            nextImageIndex: currentIndex + 1 % images.length
+            nextImageIndex: (currentIndex + 1) % images.length
         }
     }
 
@@ -37,6 +38,14 @@ export default class GalleryContainer extends React.Component {
         }
     }
 
+    previousImage = () => {
+        this.setState((state) => {return {
+            currentImageIndex: (images.length + state.currentImageIndex - 1) % images.length, 
+            previousImageIndex: (images.length + state.currentImageIndex - 2) % images.length,
+            nextImageIndex: state.currentImageIndex}},
+                    () => { preloadImage(images[this.state.currentImageIndex + 1 % images.length])});
+    }
+
     nextImage = () => {
         this.setState((state) => {return {
             currentImageIndex: (state.currentImageIndex + 1) % images.length, 
@@ -47,8 +56,10 @@ export default class GalleryContainer extends React.Component {
 
     render() {
         return (
-            [<GalleryPage key={images[this.state.previousImageIndex].src} show={false} image={images[this.state.previousImageIndex]} onClick={this.nextImage} style={{position: 'absolute', top: 0, left: 0}}/>,
-            <GalleryPage key={images[this.state.currentImageIndex].src} image={images[this.state.currentImageIndex]} onClick={this.nextImage} style={{position: 'absolute', top: 0, left: 0}}/>,
-            <GalleryPage key={images[this.state.nextImageIndex].src} show={false} image={images[this.state.nextImageIndex]} onClick={this.nextImage} style={{position: 'absolute', top: 0, left: 0}}/>])
+            <Swiper onSwipeLeft={this.nextImage} onSwipeRight={this.previousImage} onClick={this.nextImage}> 
+                <GalleryPage key={images[this.state.previousImageIndex].src} show={true} image={images[this.state.previousImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
+                <GalleryPage key={images[this.state.currentImageIndex].src} image={images[this.state.currentImageIndex]}style={{position: 'absolute', top: 0, left: 0}}/>
+                <GalleryPage key={images[this.state.nextImageIndex].src} show={false} image={images[this.state.nextImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
+            </Swiper>)
     }
 }

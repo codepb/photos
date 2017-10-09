@@ -7,12 +7,12 @@ import Button from './button';
 
 const pageStyles = {
     gallery: {
-        transition: '2s',
         opacity: 0,
         margin: '3vh 7vw 3vh 5vw',
         width: '88vw',
         height: '94vh',
-        visibility: 'hidden'
+        visibility: 'hidden',
+        background: '#fff'
     },
     shown: {
         transition: '2s',
@@ -21,7 +21,7 @@ const pageStyles = {
     },
     image: {
         float: 'left',
-        maxWidth: '85%',
+        maxWidth: 'calc(100% - 200px)',
         maxHeight: '90vh'
     },
     figure: {
@@ -30,7 +30,7 @@ const pageStyles = {
     },
     caption: {
         float:'left',
-        width: '15%',
+        width: 200,
         paddingLeft: 40,
         paddingTop: 15,
         textAlign: 'left',
