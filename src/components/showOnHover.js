@@ -15,8 +15,15 @@ const styles = {
 class ShowOnHover extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            shown: false
+            shown: props.showInitially ? true : false
+        }
+    }
+    
+    componentDidMount() {
+        if(this.state.shown) {
+            setTimeout(() => {this.setState({shown: false})}, 5000);
         }
     }
 

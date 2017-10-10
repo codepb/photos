@@ -8,7 +8,7 @@ export default class GalleryPage extends React.Component {
         return (
             [
             <GalleryContainer key="gallery" index={this.props.match.params.index ? this.props.match.params.index : 0} />,
-            <ShowOnHover key="header" style={{zIndex: 1}}>
+            <ShowOnHover key="header" style={{zIndex: 1}} showInitially={true}>
                 <Header/>
             </ShowOnHover>
             ]
