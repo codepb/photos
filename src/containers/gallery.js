@@ -57,7 +57,7 @@ export default class GalleryContainer extends React.Component {
 
     render() {
         return (
-            <Swiper onSwipeLeft={this.nextImage} onSwipeRight={this.previousImage}> 
+            <Swiper onSwipeLeft={this.nextImage} onSwipeRight={this.previousImage} style={{position: 'relative'}}> 
                 <GalleryPage key={images[this.state.previousImageIndex].src} show={false} image={images[this.state.previousImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
                 <GalleryPage key={images[this.state.currentImageIndex].src} image={images[this.state.currentImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
                 <GalleryPage key={images[this.state.nextImageIndex].src} show={false} image={images[this.state.nextImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
