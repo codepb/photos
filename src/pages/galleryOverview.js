@@ -10,7 +10,12 @@ const PhotoSet = [
     {src:'/photos/Bassenthwaite (1 of 2).jpg', width: 7360, height: 3969},
     {src: '/photos/Bassenthwaite (2 of 2).jpg', width: 7360, height: 4912},
     {src: '/photos/Bassenthwaite-3.jpg', width: 7360, height: 3828},
-    {src: '/photos/Bridge-1.jpg', width: 4912, height: 7360}
+    {src: '/photos/Bridge-1.jpg', width: 4912, height: 7360},
+    {src: '/photos/HighForce.jpg', srcSet: [
+        '/photos/HighForce-2048.jpg 2048w',
+        '/photos/HighForce-1024.jpg 1024w',
+        '/photos/HighForce-512.jpg 512w'
+    ], width: 5807, height: 4646}
 ];
 
 export default class Sample extends React.Component {

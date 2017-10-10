@@ -23,7 +23,7 @@ class ShowOnHover extends React.Component {
     
     componentDidMount() {
         if(this.state.shown) {
-            setTimeout(() => {this.setState({shown: false})}, 5000);
+            setTimeout(() => {this.setState({shown: false})}, this.props.timeToShowInitially ? this.props.timeToShowInititally : 5000);
         }
     }
 
@@ -36,7 +36,7 @@ class ShowOnHover extends React.Component {
     }
 
     render() {
-        const {classes, ...otherProps} = this.props
+        const {classes, showInitially, ...otherProps} = this.props
         return(
             <div onMouseEnter={this.show} onMouseLeave={this.hide} className={this.state.shown ? this.props.classes.show : this.props.classes.hide} {...otherProps}>
                 {this.props.children}

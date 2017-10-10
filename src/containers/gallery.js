@@ -12,7 +12,12 @@ const images = [
     {src: '/photos/Bassenthwaite (2 of 2).jpg', caption: {title: 'Bassenthwaite and Hills', content: 'Rocks with hills behind.'}},
     {src: '/photos/Bassenthwaite-3.jpg', caption: {title: 'Bassenthwaite hills', content: 'Low clouds on the hills.'}},
     {src: '/photos/Bridge-1.jpg', caption: {title: 'Framwellgate Bridge', content: 'Underside of Framwellgate Bridge.'}},
-   
+    {src: '/photos/HighForce.jpg', srcSet: [
+        '/photos/HighForce-2048.jpg 2048w',
+        '/photos/HighForce-1024.jpg 1024w',
+        '/photos/HighForce-512.jpg 512w'
+    ],
+    caption: {title: 'High Force', content: 'Afternoon at High Force.'}}
 ]
 
 function preloadImage(src) {

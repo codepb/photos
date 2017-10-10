@@ -42,7 +42,7 @@ const GalleryPage = injectSheet(pageStyles)(({show, classes, children, image, ..
     return (
          <CenterChildren key="image" className={typeof(show) === 'undefined' || show ? classNames(classes.gallery, classes.shown) : classes.gallery} onClick={props.onClick} {...props} >
              <figure className={classes.figure}>
-                <img src={image.src} alt={image.caption.title} className={classes.image}/>
+                <img src={image.src} alt={image.caption.title} srcSet={image.srcSet} className={classes.image}/>
                 <Caption className={classes.caption}>
                     <CaptionTitle style={{marginBottom: 5}}>{image.caption.title}</CaptionTitle>
                     <CaptionBody>{image.caption.content}</CaptionBody>
