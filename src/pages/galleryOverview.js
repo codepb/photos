@@ -15,7 +15,22 @@ const PhotoSet = [
         '/photos/HighForce-2048.jpg 2048w',
         '/photos/HighForce-1024.jpg 1024w',
         '/photos/HighForce-512.jpg 512w'
-    ], width: 5807, height: 4646}
+    ], width: 5807, height: 4646},
+    {src: '/photos/HighForce2.jpg', srcSet: [
+        '/photos/HighForce2-2048.jpg 2048w',
+        '/photos/HighForce2-1024.jpg 1024w',
+        '/photos/HighForce2-512.jpg 512w'
+    ], width: 7360, height: 4912},
+    {src: '/photos/HighForceBW.jpg', srcSet: [
+        '/photos/HighForceBW-2048.jpg 2048w',
+        '/photos/HighForceBW-1024.jpg 1024w',
+        '/photos/HighForceBW-512.jpg 512w'
+    ], width: 7360, height: 4912},
+    {src: '/photos/TeesValley.jpg', srcSet: [
+        '/photos/TeesValley-2048.jpg 2048w',
+        '/photos/TeesValley-1024.jpg 1024w',
+        '/photos/TeesValley-512.jpg 512w'
+    ], width: 6140, height: 4912}
 ];
 
 export default class Sample extends React.Component {

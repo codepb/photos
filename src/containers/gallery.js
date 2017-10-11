@@ -17,7 +17,25 @@ const images = [
         '/photos/HighForce-1024.jpg 1024w',
         '/photos/HighForce-512.jpg 512w'
     ],
-    caption: {title: 'High Force', content: 'Afternoon at High Force.'}}
+    caption: {title: 'High Force', content: 'Afternoon at High Force.'}},
+    {src: '/photos/HighForce2.jpg', srcSet: [
+        '/photos/HighForce2-2048.jpg 2048w',
+        '/photos/HighForce2-1024.jpg 1024w',
+        '/photos/HighForce2-512.jpg 512w'
+    ],
+    caption: {title: 'High Force', content: 'Afternoon at High Force.'}},
+    {src: '/photos/HighForceBW.jpg', srcSet: [
+        '/photos/HighForceBW-2048.jpg 2048w',
+        '/photos/HighForceBW-1024.jpg 1024w',
+        '/photos/HighForceBW-512.jpg 512w'
+    ],
+    caption: {title: 'High Force', content: 'Afternoon at High Force.'}},
+    {src: '/photos/TeesValley.jpg', srcSet: [
+        '/photos/TeesValley-2048.jpg 2048w',
+        '/photos/TeesValley-1024.jpg 1024w',
+        '/photos/TeesValley-512.jpg 512w'
+    ],
+    caption: {title: 'Tees Valley', content: 'Evening over Tees Valley.'}}
 ]
 
 function preloadImage(src) {
