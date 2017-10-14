@@ -41,7 +41,25 @@ const photos = [
         '/photos/BelmontViaduct-1024.jpg 1024w',
         '/photos/BelmontViaduct-512.jpg 512w'
     ], width: 7360, height: 4912,
-    caption: {title: 'Belmont Viaduct', content: 'This magnificent viaduct towers over the river weir.'}}
+    caption: {title: 'Belmont Viaduct', content: 'This magnificent viaduct towers over the river weir.'}},
+    {src: '/photos/NorwichCathedral.jpg', srcSet: [
+        '/photos/NorwichCathedral-2048.jpg 2048w',
+        '/photos/NorwichCathedral-1024.jpg 1024w',
+        '/photos/NorwichCathedral-512.jpg 512w'
+    ], width: 4824, height: 3216,
+    caption: {title: 'Norwich Cathedral', content: 'Cathedral\'s have the most magnificent architecture. I always love to look up and see the detail that goes into the ceilings, that often goes unseen.'}},
+    {src: '/photos/Tree.jpg', srcSet: [
+        '/photos/Tree-2048.jpg 2048w',
+        '/photos/Tree-1024.jpg 1024w',
+        '/photos/Tree-512.jpg 512w'
+    ], width: 5214, height: 3477,
+    caption: {title: 'Tree', content: 'A chance moment, driving home I passed this tree. The way the light struck the tree struck me, and the beautiful cloud structure completed the scene.'}},
+    {src: '/photos/HayBale.jpg', srcSet: [
+        '/photos/HayBale-2048.jpg 2048w',
+        '/photos/HayBale-1024.jpg 1024w',
+        '/photos/HayBale-512.jpg 512w'
+    ], width: 5034, height: 2388,
+    caption: {title: 'Hay Bale', content: 'Walking through the fields, the hay bales add to the scene. The shapes of the hay bales are a perfect contrast to the lines of the fields.'}}
 ];
 
 export default photos;
