@@ -1,5 +1,4 @@
 import * as React from 'react';
-import ShowOnMouseMove from '../components/showOnMouseMove';
 import GalleryContainer from '../containers/gallery';
 
 export default class GalleryPage extends React.Component { 

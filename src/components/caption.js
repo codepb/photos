@@ -12,7 +12,8 @@ const Caption = injectSheet(captionStyles)(({ children, classes, ...otherProps})
 
 const titleStyles = {
     title: {
-        margin: 0
+        margin: 0,
+        letterSpacing: 0.5
     }
 }
 
@@ -22,7 +23,8 @@ export const CaptionTitle = injectSheet(titleStyles)(({ children, classes, ...ot
 
 const bodyStyles = {
     body: {
-        fontSize: 11
+        fontSize: 11,
+        letterSpacing: 0.5
     }
 }
 

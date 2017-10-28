@@ -1,5 +1,4 @@
 import * as React from 'react';
-import injectSheet from 'react-jss';
 import Hideable from './hideable';
 
 export default class ShowOnMouseMove extends React.Component {

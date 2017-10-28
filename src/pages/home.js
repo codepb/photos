@@ -2,7 +2,7 @@ import * as React from 'react';
 import CenterChildren from '../components/centerChildren';
 
 const Home = ({ history }) => (
-    <CenterChildren key="image" onClick={() => history.push('/gallery/0')} style={{
+    <CenterChildren key="image" onClick={() => history.push('/introduction')} style={{
         width: '100vw',
         height: '100vh',
         background: '#54B298',
