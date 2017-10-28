@@ -1,18 +1,8 @@
 import * as React from 'react';
 import injectSheet from 'react-jss';
+import Hideable from './hideable';
 
-const styles = {
-    hide: {
-        transition: '2s',
-        opacity: 0,
-    },
-    show: {
-        transition: '2s',
-        opacity: 1
-    }
-}
-
-class ShowOnHover extends React.Component {
+export default class ShowOnHover extends React.Component {
     constructor(props) {
         super(props);
 
@@ -36,13 +26,11 @@ class ShowOnHover extends React.Component {
     }
 
     render() {
-        const {classes, showInitially, ...otherProps} = this.props
+        const {showInitially, timeToShowInitially, ...otherProps} = this.props;
         return(
-            <div onMouseEnter={this.show} onMouseLeave={this.hide} className={this.state.shown ? this.props.classes.show : this.props.classes.hide} {...otherProps}>
+            <Hideable onMouseEnter={this.show} onMouseLeave={this.hide} show={this.state.shown} {...otherProps}>
                 {this.props.children}
-            </div>
+            </Hideable>
         )
     }
 }
-
-export default injectSheet(styles)(ShowOnHover);

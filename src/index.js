@@ -7,10 +7,10 @@ import 'typeface-raleway';
 import './index.css';
 import { routes } from './routes';
 import registerServiceWorker from './registerServiceWorker';
-import { colors } from './theme';
+import { palette } from './theme';
 
 ReactDOM.render(
-    <ThemeProvider theme={{ colors: colors }}>
+    <ThemeProvider theme={{ palette: palette }}>
         <BrowserRouter children={ routes } />
     </ThemeProvider>, document.getElementById('root'));
 registerServiceWorker();

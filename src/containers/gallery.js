@@ -1,14 +1,22 @@
 import * as React from 'react';
 import Swiper from '../components/swiper';
 import GalleryPage from '../components/galleryPage';
-import ShowOnHover from '../components/showOnHover';
+import ShowOnMouseMove from '../components/showOnMouseMove';
 import CenterChildren from '../components/centerChildren';
+import Header from '../components/header';
 import Photos from '../photos';
 
 function preloadImage(src) {
     const image = new Image();
     image.src = src;
 }
+
+var key = {
+    LEFT:   37,
+    UP:     38,
+    RIGHT:  39,
+    DOWN:   40
+  };
 
 export default class GalleryContainer extends React.Component {
     constructor(props) {
@@ -17,7 +25,8 @@ export default class GalleryContainer extends React.Component {
         this.state = {
             currentImageIndex: currentIndex,
             previousImageIndex: currentIndex === 0 ? Photos.length - 1 : currentIndex - 1,
-            nextImageIndex: (currentIndex + 1) % Photos.length
+            nextImageIndex: (currentIndex + 1) % Photos.length,
+            lastImageIndex: currentIndex === 0 ? Photos.length - 1 : currentIndex - 1
         }
     }
 
@@ -34,33 +43,48 @@ export default class GalleryContainer extends React.Component {
         this.setState((state) => {return {
             currentImageIndex: (Photos.length + state.currentImageIndex - 1) % Photos.length, 
             previousImageIndex: (Photos.length + state.currentImageIndex - 2) % Photos.length,
-            nextImageIndex: state.currentImageIndex}});
+            nextImageIndex: state.currentImageIndex,
+            lastImageIndex: state.currentImageIndex}});
     }
 
     nextImage = () => {
         this.setState((state) => {return {
             currentImageIndex: (state.currentImageIndex + 1) % Photos.length, 
             previousImageIndex: state.currentImageIndex,
-            nextImageIndex: (state.currentImageIndex + 2) % Photos.length}},
+            nextImageIndex: (state.currentImageIndex + 2) % Photos.length,
+            lastImageIndex: state.currentImageIndex}},
                     () => { preloadImage(Photos[this.state.currentImageIndex + 1 % Photos.length])});
+    }
+    handleKeyPress = (e) => {
+        console.log(e);
+        if(e.keyCode === key.LEFT) {
+            this.previousImage();
+        } else if(e.keyCode === key.RIGHT) {
+            this.nextImage();
+        }
     }
 
     render() {
         return (
-            <Swiper onSwipeLeft={this.nextImage} onSwipeRight={this.previousImage} style={{position: 'relative'}}> 
-                <GalleryPage key={Photos[this.state.previousImageIndex].src} show={true} image={Photos[this.state.previousImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
-                <GalleryPage key={Photos[this.state.currentImageIndex].src} image={Photos[this.state.currentImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
+            <div tabIndex="1" onKeyDown={this.handleKeyPress} style={{position: 'relative', height: '100vh'}}>
+            <Swiper onSwipeLeft={this.previousImage} onSwipeRight={this.nextImage} style={{position: 'relative', height: '100vh'}}> 
+                
+                <GalleryPage key={`${Photos[this.state.lastImageIndex].src}-shown`} image={Photos[this.state.previousImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
+                <GalleryPage key={`${Photos[this.state.currentImageIndex].src}-shown`} image={Photos[this.state.currentImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
+                <GalleryPage key={Photos[this.state.previousImageIndex].src} show={false} image={Photos[this.state.previousImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
                 <GalleryPage key={Photos[this.state.nextImageIndex].src} show={false} image={Photos[this.state.nextImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
-                <ShowOnHover style={{position: 'absolute', right: 0, height: '100vh', width: 40}} showInitially={true}>
-                    <CenterChildren style={{height: '100%'}}>
-                        <div style={{fontSize: 40, cursor: 'pointer'}} onClick={this.nextImage}>&gt;</div>
+                <ShowOnMouseMove style={{position: 'absolute', left: 0, top:0, height: '100vh', width: '100vw'}} showInitially={true}>
+                    
+                    <CenterChildren style={{position: 'absolute', right: 0, height: '100%', width: 40}} >
+                        <span style={{fontSize: 40, cursor: 'pointer'}} onClick={this.nextImage}>&gt;</span>
                     </CenterChildren>
-                </ShowOnHover>
-                <ShowOnHover style={{position: 'absolute', left: 0, height: '100vh', width: 40}} showInitially={true}>
-                    <CenterChildren style={{height: '100%'}}>
-                        <div style={{fontSize: 40, cursor: 'pointer'}} onClick={this.previousImage}>&lt;</div>
+                    <CenterChildren style={{position: 'absolute', left: 0, height: '100%', width: 40}}>
+                        <span style={{fontSize: 40, cursor: 'pointer'}} onClick={this.previousImage}>&lt;</span>
                     </CenterChildren>
-                </ShowOnHover>
-            </Swiper>)
+                    <Header style={{position: 'absolute', top:0, left: 0}} />
+                </ShowOnMouseMove>
+                
+            </Swiper>
+            </div>)
     }
 }

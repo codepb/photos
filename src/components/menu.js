@@ -7,14 +7,14 @@ const styles = (theme) => ({
         display: 'flex',
         alignItems: 'flex-end',
         '& a': {
-            color: '#333',
+            color: '#444',
             fontFamily: 'raleway',
             fontWeight: 300,
             textDecoration: 'none',
             textTransform: 'uppercase',
             verticalAlign: 'baseline',
             '&:hover,&.active': {
-                color: '#000',
+                color: '#222',
                 fontWeight: 500
             }
         }
