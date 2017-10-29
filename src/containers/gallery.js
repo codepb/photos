@@ -1,9 +1,11 @@
 import * as React from 'react';
+import {TransitionGroup} from 'react-transition-group';
 import Swiper from '../components/swiper';
 import GalleryPage from '../components/galleryPage';
 import ShowOnMouseMove from '../components/showOnMouseMove';
 import CenterChildren from '../components/centerChildren';
 import Header from '../components/header';
+import Fade from '../components/fade';
 import Photos from '../photos';
 
 function preloadImage(src) {
@@ -24,9 +26,6 @@ export default class GalleryContainer extends React.Component {
         const currentIndex = props.index ? props.index * 1 : 0
         this.state = {
             currentImageIndex: currentIndex,
-            previousImageIndex: currentIndex === 0 ? Photos.length - 1 : currentIndex - 1,
-            nextImageIndex: (currentIndex + 1) % Photos.length,
-            lastImageIndex: currentIndex === 0 ? Photos.length - 1 : currentIndex - 1
         }
     }
 
@@ -40,21 +39,13 @@ export default class GalleryContainer extends React.Component {
     }
 
     previousImage = () => {
-        this.setState((state) => {return {
-            currentImageIndex: (Photos.length + state.currentImageIndex - 1) % Photos.length, 
-            previousImageIndex: (Photos.length + state.currentImageIndex - 2) % Photos.length,
-            nextImageIndex: state.currentImageIndex,
-            lastImageIndex: state.currentImageIndex}});
+        this.setState((state) => ({currentImageIndex: (Photos.length + state.currentImageIndex - 1) % Photos.length}));
     }
 
     nextImage = () => {
-        this.setState((state) => {return {
-            currentImageIndex: (state.currentImageIndex + 1) % Photos.length, 
-            previousImageIndex: state.currentImageIndex,
-            nextImageIndex: (state.currentImageIndex + 2) % Photos.length,
-            lastImageIndex: state.currentImageIndex}},
-                    () => { preloadImage(Photos[this.state.currentImageIndex + 1 % Photos.length])});
+        this.setState((state) => ({currentImageIndex: (state.currentImageIndex + 1) % Photos.length}));
     }
+    
     handleKeyPress = (e) => {
         console.log(e);
         if(e.keyCode === key.LEFT) {
@@ -68,11 +59,11 @@ export default class GalleryContainer extends React.Component {
         return (
             <div tabIndex="1" onKeyDown={this.handleKeyPress} style={{position: 'relative', height: '100vh'}}>
             <Swiper onSwipeLeft={this.previousImage} onSwipeRight={this.nextImage} style={{position: 'relative', height: '100vh'}}> 
-                
-                <GalleryPage key={`${Photos[this.state.lastImageIndex].src}-shown`} image={Photos[this.state.previousImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
-                <GalleryPage key={`${Photos[this.state.currentImageIndex].src}-shown`} image={Photos[this.state.currentImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
-                <GalleryPage key={Photos[this.state.previousImageIndex].src} show={false} image={Photos[this.state.previousImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
-                <GalleryPage key={Photos[this.state.nextImageIndex].src} show={false} image={Photos[this.state.nextImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
+                <TransitionGroup>
+                <Fade key={Photos[this.state.currentImageIndex].src}>
+                    <GalleryPage key={`${Photos[this.state.currentImageIndex].src}-shown`} image={Photos[this.state.currentImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
+                </Fade>
+                </TransitionGroup>
                 <ShowOnMouseMove style={{position: 'absolute', left: 0, top:0, height: '100vh', width: '100vw'}} showInitially={true}>
                     
                     <CenterChildren style={{position: 'absolute', right: 0, height: '100%', width: 40}} >

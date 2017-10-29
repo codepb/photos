@@ -3,7 +3,7 @@ import CenterChildren from '../components/centerChildren';
 
 const Introduction = ({history}) => (
     <CenterChildren onClick={() => history.push('/gallery/0')} style={{width: '100vw', height: '100vh', textAlign: 'justify', letterSpacing: 0.5}}>
-        <div style={{width: 800}}>
+        <div style={{maxWidth: 800, margin: 40}}>
             <p>
                 Photography is an interesting artform. You are limited by what is infront of you.
                 You can't decide to exclude a part of the scene, or move the elements for a better

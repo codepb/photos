@@ -3,9 +3,6 @@ const photos = [
     {src: '/photos/Gibsons Cave-1.jpg', width: 6288, height: 4197, caption: {title: 'Gibson\'s Cave', content: 'Waterfall at Gibson\'s Cave.'}},
     {src: '/photos/IMG_0042.jpg', width: 1809, height: 2171, caption: {title: 'Ghostly Pillars', content: 'Water hides so much, but some things break through.'}},
     {src:'/photos/Bassenthwaite (1 of 2).jpg', width: 7360, height: 3969, caption: {title: 'Bassenthwaite', content: 'Trees lined up against the shore.'}},
-    {src: '/photos/Bassenthwaite (2 of 2).jpg', width: 7360, height: 4912, caption: {title: 'Bassenthwaite and Hills', content: 'Rocks with hills behind.'}},
-    {src: '/photos/Bassenthwaite-3.jpg', width: 7360, height: 3828, caption: {title: 'Bassenthwaite hills', content: 'Low clouds on the hills.'}},
-    {src: '/photos/Bridge-1.jpg', width: 4912, height: 7360, caption: {title: 'Framwellgate Bridge', content: 'Underside of Framwellgate Bridge.'}},
     {src: '/photos/HighForce.jpg', srcSet: [
         '/photos/HighForce-2048.jpg 2048w',
         '/photos/HighForce-1024.jpg 1024w',
@@ -16,12 +13,6 @@ const photos = [
         '/photos/HighForce2-2048.jpg 2048w',
         '/photos/HighForce2-1024.jpg 1024w',
         '/photos/HighForce2-512.jpg 512w'
-    ], width: 7360, height: 4912,
-    caption: {title: 'High Force', content: 'Afternoon at High Force.'}},
-    {src: '/photos/HighForceBW.jpg', srcSet: [
-        '/photos/HighForceBW-2048.jpg 2048w',
-        '/photos/HighForceBW-1024.jpg 1024w',
-        '/photos/HighForceBW-512.jpg 512w'
     ], width: 7360, height: 4912,
     caption: {title: 'High Force', content: 'Afternoon at High Force.'}},
     {src: '/photos/TeesValley.jpg', srcSet: [
@@ -59,7 +50,19 @@ const photos = [
         '/photos/HayBale-1024.jpg 1024w',
         '/photos/HayBale-512.jpg 512w'
     ], width: 5034, height: 2388,
-    caption: {title: 'Hay Bale', content: 'Walking through the fields, the hay bales add to the scene. The shapes of the hay bales are a perfect contrast to the lines of the fields.'}}
+    caption: {title: 'Hay Bale', content: 'Walking through the fields, the hay bales add to the scene. The shapes of the hay bales are a perfect contrast to the lines of the fields.'}},
+    {src: '/photos/LowForce.jpg', srcSet: [
+        '/photos/LowForce-2048.jpg 2048w',
+        '/photos/LowForce-1024.jpg 1024w',
+        '/photos/LowForce-512.jpg 512w'
+    ], width: 7360, height: 4912,
+    caption: {title: 'Low Force', content: 'The waterfalls at low force.'}},
+    {src: '/photos/Fields.jpg', srcSet: [
+        '/photos/Fields-2048.jpg 2048w',
+        '/photos/Fields-1024.jpg 1024w',
+        '/photos/Fields-512.jpg 512w'
+    ], width: 3771, height: 1964,
+    caption: {title: 'Fields', content: 'Something about the fields.'}}
 ];
 
 export default photos;
