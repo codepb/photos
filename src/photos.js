@@ -1,7 +1,19 @@
 const photos = [
-    {src: '/photos/IMG_0029.jpg', width: 5544, height: 3696, caption: {title: 'Tranquility', content: 'The sea reflects the meaning of tranquility. Nothing quite matches the sound of the sea as the sun sets.'}},
-    {src: '/photos/Gibsons Cave-1.jpg', width: 6288, height: 4197, caption: {title: 'Gibson\'s Cave', content: 'Waterfall at Gibson\'s Cave.'}},
-    {src: '/photos/IMG_0042.jpg', width: 1809, height: 2171, caption: {title: 'Ghostly Pillars', content: 'Water hides so much, but some things break through.'}},
+    {src: '/photos/Tranquility.jpg', srcSet: [
+        '/photos/Tranquility-2048.jpg 2048w',
+        '/photos/Tranquility-1024.jpg 1024w',
+        '/photos/Tranquility-512.jpg 512w'
+    ], width: 5544, height: 3696, caption: {title: 'Tranquility', content: 'The sea reflects the meaning of tranquility. Nothing quite matches the sound of the sea as the sun sets.'}},
+    {src: '/photos/GibsonsCave.jpg', srcSet: [
+        '/photos/GibsonsCave-2048.jpg 2048w',
+        '/photos/GibsonsCave-1024.jpg 1024w',
+        '/photos/GibsonsCave-512.jpg 512w'
+    ], width: 6288, height: 4197, caption: {title: 'Gibson\'s Cave', content: 'Waterfall at Gibson\'s Cave.'}},
+    {src: '/photos/Ghostly.jpg', srcSet: [
+        '/photos/Ghostly-2048.jpg 2048w',
+        '/photos/Ghostly-1024.jpg 1024w',
+        '/photos/Ghostly-512.jpg 512w'
+    ], width: 1809, height: 2171, caption: {title: 'Ghostly Pillars', content: 'Water hides so much, but some things break through.'}},
     {src:'/photos/Bassenthwaite.jpg', srcSet: [
         '/photos/Bassenthwaite-2048.jpg 2048w',
         '/photos/Bassenthwaite-1024.jpg 1024w',
