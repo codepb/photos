@@ -2,7 +2,11 @@ const photos = [
     {src: '/photos/IMG_0029.jpg', width: 5544, height: 3696, caption: {title: 'Tranquility', content: 'The sea reflects the meaning of tranquility. Nothing quite matches the sound of the sea as the sun sets.'}},
     {src: '/photos/Gibsons Cave-1.jpg', width: 6288, height: 4197, caption: {title: 'Gibson\'s Cave', content: 'Waterfall at Gibson\'s Cave.'}},
     {src: '/photos/IMG_0042.jpg', width: 1809, height: 2171, caption: {title: 'Ghostly Pillars', content: 'Water hides so much, but some things break through.'}},
-    {src:'/photos/Bassenthwaite (1 of 2).jpg', width: 7360, height: 3969, caption: {title: 'Bassenthwaite', content: 'Trees lined up against the shore.'}},
+    {src:'/photos/Bassenthwaite.jpg', srcSet: [
+        '/photos/Bassenthwaite-2048.jpg 2048w',
+        '/photos/Bassenthwaite-1024.jpg 1024w',
+        '/photos/Bassenthwaite-512.jpg 512w'
+    ], width: 7360, height: 3969, caption: {title: 'Bassenthwaite', content: 'Trees lined up against the shore.'}},
     {src: '/photos/HighForce.jpg', srcSet: [
         '/photos/HighForce-2048.jpg 2048w',
         '/photos/HighForce-1024.jpg 1024w',
