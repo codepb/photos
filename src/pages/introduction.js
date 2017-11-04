@@ -2,7 +2,15 @@ import * as React from 'react';
 import CenterChildren from '../components/centerChildren';
 
 const Introduction = ({history}) => (
-    <CenterChildren onClick={() => history.push('/gallery/0')} style={{width: '100vw', height: '100vh', textAlign: 'justify', letterSpacing: 0.5}}>
+    <CenterChildren onClick={() => history.push('/gallery/0')} style={{
+        width: '100vw',
+        height: '100vh',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        textAlign: 'justify',
+        cursor: 'pointer',
+        letterSpacing: 0.5}}>
         <div style={{maxWidth: 800, margin: 40}}>
             <p>
                 Photography is an interesting artform. You are limited by what is infront of you.

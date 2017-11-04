@@ -6,6 +6,9 @@ const Home = ({ history }) => (
         width: '100vw',
         height: '100vh',
         background: '#54B298',
+        position: 'absolute',
+        top: 0,
+        left: 0,
         cursor: 'pointer'}}>
         <div>
         <h1 style={{color: '#eee', marginBottom: 2, fontFamily: 'raleway', textAlign: 'center', fontWeight: 300, fontSize: 36, textTransform: 'uppercase', letterSpacing: 2}}>Serenity</h1>

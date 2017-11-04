@@ -3,7 +3,6 @@ import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import CenterChildren from './centerChildren';
 import Caption, { CaptionTitle, CaptionBody } from './caption';
-import Button from './button';
 
 const pageStyles = {
     gallery: {

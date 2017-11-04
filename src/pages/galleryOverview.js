@@ -10,11 +10,15 @@ export default class Sample extends React.Component {
     }
 
     render() {
-        return [
-            <Header key="header"/>,
+        return <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0
+        }}>
+            <Header key="header"/>
             <CenterChildren key="gallery" style={{width: 'calc(100vw - 80px)', position: 'relative', marginLeft: 40, marginBottom: 30}}>
                 <Gallery photos={Photos} onClick={this.navigateToGallery}/>
             </CenterChildren>
-        ];
+        </div>;
     }
 }
