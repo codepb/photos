@@ -25,7 +25,8 @@ const pageStyles = {
     },
     figure: {
         maxHeight: '100%',
-        maxWidth: '100%'
+        maxWidth: '100%',
+        margin: 0
     },
     caption: {
         float:'left',
@@ -37,17 +38,49 @@ const pageStyles = {
     }
 }
 
-const GalleryPage = injectSheet(pageStyles)(({show, classes, children, image, ...props}) => {
-    return (
-         <CenterChildren key="image" className={typeof(show) === 'undefined' || show ? classNames(classes.gallery, classes.shown) : classes.gallery} onClick={props.onClick} {...props} >
-             <figure className={classes.figure}>
-                <img src={image.src} alt={image.caption.title} srcSet={image.srcSet} className={classes.image} />
-                <Caption className={classes.caption}>
-                    <CaptionTitle style={{marginBottom: 5}}>{image.caption.title}</CaptionTitle>
-                    <CaptionBody>{image.caption.content}</CaptionBody>
-                </Caption>
-            </figure>
-         </CenterChildren>);
-});
+class GalleryPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            width: 0,
+            height: 0
+        }
+    }
 
-export default GalleryPage;
+    componentDidMount() {
+        this.updateSize();
+        window.addEventListener('resize', this.updateSize);
+      }
+      
+      componentWillUnmount() {
+        window.removeEventListener('resize', this.updateSize);
+      }
+      
+
+    updateSize = () => {
+        const componentWidth = window.innerWidth * 0.88;
+        const componentHeight = window.innerHeight * 0.94;
+        const ratio = componentWidth / componentHeight;
+        const imageRatio = this.props.image.width / this.props.image.height;
+        const width = imageRatio > ratio ? componentWidth - 200 : (componentHeight * 0.9) * imageRatio;
+        const height = imageRatio > ratio ? (componentWidth - 200) / imageRatio : componentHeight * 0.9;
+        this.setState({ width: width, height: height });
+    }
+    
+    render()  {
+        const {show, classes, children, image, ...props} = this.props;
+    
+        return (
+            <CenterChildren key="image" className={typeof(show) === 'undefined' || show ? classNames(classes.gallery, classes.shown) : classes.gallery} onClick={props.onClick} {...props} >
+                <figure className={classes.figure}>
+                    <img src={image.src} alt={image.caption.title} srcSet={image.srcSet} className={classes.image} width={this.state.width} height={this.state.height} />
+                    <Caption className={classes.caption}>
+                        <CaptionTitle style={{marginBottom: 5}}>{image.caption.title}</CaptionTitle>
+                        <CaptionBody>{image.caption.content}</CaptionBody>
+                    </Caption>
+                </figure>
+            </CenterChildren>);
+    }
+};
+
+export default injectSheet(pageStyles)(GalleryPage);
