@@ -3,29 +3,29 @@ const photos = [
         '/photos/Tranquility-2048.jpg 2048w',
         '/photos/Tranquility-1024.jpg 1024w',
         '/photos/Tranquility-512.jpg 512w'
-    ], width: 5544, height: 3696, caption: {title: 'Tranquility', content: 'The sea reflects the meaning of tranquility. Nothing quite matches the sound of the sea as the sun sets.'}},
+    ], width: 5544, height: 3696, caption: {title: 'Tranquility', content: 'When the sun sets over the sea, the world is so peaceful. The colours reflect the peacefulness.'}},
     {src: '/photos/Ghostly.jpg', srcSet: [
         '/photos/Ghostly-2048.jpg 2048w',
         '/photos/Ghostly-1024.jpg 1024w',
         '/photos/Ghostly-512.jpg 512w'
-    ], width: 1809, height: 2171, caption: {title: 'Ghostly Pillars', content: 'Water hides so much, but some things break through.'}},
+    ], width: 1809, height: 2171, caption: {title: 'Ghostly Pillars', content: '.'}},
     {src:'/photos/Bassenthwaite.jpg', srcSet: [
         '/photos/Bassenthwaite-2048.jpg 2048w',
         '/photos/Bassenthwaite-1024.jpg 1024w',
         '/photos/Bassenthwaite-512.jpg 512w'
-    ], width: 7360, height: 3969, caption: {title: 'Bassenthwaite', content: 'Trees lined up against the shore.'}},
+    ], width: 7360, height: 3969, caption: {title: 'Bassenthwaite', content: '.'}},
     {src: '/photos/BelmontViaduct.jpg', srcSet: [
         '/photos/BelmontViaduct-2048.jpg 2048w',
         '/photos/BelmontViaduct-1024.jpg 1024w',
         '/photos/BelmontViaduct-512.jpg 512w'
     ], width: 7360, height: 4912,
-    caption: {title: 'Belmont Viaduct', content: 'This magnificent viaduct towers over the river weir.'}},
+    caption: {title: 'Belmont Viaduct', content: 'This magnificent viaduct towers over the river weir. In the middle of the natural landscape, the man made monument compliments it well.'}},
     {src: '/photos/HighForce2.jpg', srcSet: [
         '/photos/HighForce2-2048.jpg 2048w',
         '/photos/HighForce2-1024.jpg 1024w',
         '/photos/HighForce2-512.jpg 512w'
     ], width: 7360, height: 4912,
-    caption: {title: 'High Force', content: 'Afternoon at High Force.'}},
+    caption: {title: 'High Force', content: 'The power of High Force is always awe-inspiring. When you freeze it to just a moment, the movement of the water looks so graceful, and far from the loud, rushing waterfall.'}},
     {src: '/photos/LowForce.jpg', srcSet: [
         '/photos/LowForce-2048.jpg 2048w',
         '/photos/LowForce-1024.jpg 1024w',
