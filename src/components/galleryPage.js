@@ -18,23 +18,37 @@ const pageStyles = {
         opacity: 1,
         visibility: 'visible'
     },
-    image: {
-        float: 'left',
-        maxWidth: 'calc(100% - 200px)',
-        maxHeight: '90vh'
-    },
     figure: {
         maxHeight: '100%',
         maxWidth: '100%',
         margin: 0
     },
+    image: {
+        maxWidth: '100%',
+        maxHeight: 'calc(90vh -200)'
+    }, 
     caption: {
-        float:'left',
-        width: 200,
-        paddingLeft: 40,
-        paddingTop: 15,
+        height: 200,
+        width: '100%',
+        paddingLeft: 15,
+        paddingTop: 40,
         textAlign: 'left',
         boxSizing: 'border-box'
+    },
+    '@media screen and (orientation: landscape)': {
+        image: {
+            float: 'left',
+            maxWidth: 'calc(100% - 200px)',
+            maxHeight: '90vh'
+        }, 
+        caption: {
+            float:'left',
+            width: 200,
+            paddingLeft: 40,
+            paddingTop: 15,
+            textAlign: 'left',
+            boxSizing: 'border-box'
+        }
     }
 }
 
@@ -58,12 +72,13 @@ class GalleryPage extends React.Component {
       
 
     updateSize = () => {
-        const componentWidth = window.innerWidth * 0.88;
-        const componentHeight = window.innerHeight * 0.94;
+        const isLandscape = window.innerWidth >= window.innerHeight;
+        const componentWidth = isLandscape ? (window.innerWidth * 0.88) - 200 : window.innerWidth * 0.88;
+        const componentHeight = isLandscape ? (window.innerHeight * 0.94) * 0.9 : ((window.innerHeight * 0.94) * 0.9) - 200;
         const ratio = componentWidth / componentHeight;
         const imageRatio = this.props.image.width / this.props.image.height;
-        const width = imageRatio > ratio ? componentWidth - 200 : (componentHeight * 0.9) * imageRatio;
-        const height = imageRatio > ratio ? (componentWidth - 200) / imageRatio : componentHeight * 0.9;
+        const width = imageRatio > ratio ? componentWidth : componentHeight * imageRatio;
+        const height = imageRatio > ratio ? componentWidth / imageRatio : componentHeight;
         this.setState({ width: width, height: height });
     }
     
