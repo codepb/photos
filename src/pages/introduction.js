@@ -10,6 +10,7 @@ const Introduction = ({history}) => (
         left: 0,
         textAlign: 'justify',
         cursor: 'pointer',
+        fontSize: 14,
         letterSpacing: 0.5}}>
         <div style={{maxWidth: 800, margin: 40}}>
             <p>
