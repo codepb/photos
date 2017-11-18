@@ -10,7 +10,7 @@ const photos = [
         height: 3696,
         caption: {
             title: 'Tranquility',
-            content: 'When the sun sets over the sea, the world is so peaceful. The colours reflect the peacefulness.'
+            content: 'The gentle sound of the waves lapping against the shore, and the beautiful calming colours formed by the twilight compliment it perfectly.'
         }
     },
     {
@@ -23,8 +23,8 @@ const photos = [
         width: 1809,
         height: 2171,
         caption: {
-            title: 'Ghostly Pillars',
-            content: '.'
+            title: 'Floating Pillars',
+            content: 'The pillars emerge from the water as if floating in the air. The colours on the pillars formed by nature help them stand out against the milky white waters below.'
         }
     },
     {
@@ -37,8 +37,8 @@ const photos = [
         width: 7360,
         height: 3969,
         caption: {
-            title: 'Bassenthwaite',
-            content: '.'
+            title: 'Trees Along the Lake',
+            content: 'Harsh weather frequents Bassenthwaite. One new tree springs forth, yet to be weathered in. A few more mature stand alongside showing some age. The oldest and most beaten still stands tall, the twisted form telling the stories of what it has endured. Yet it is the most majestic of the group.'
         }
     },
     {
@@ -52,7 +52,7 @@ const photos = [
         height: 4912,
         caption: {
             title: 'Belmont Viaduct',
-            content: 'This magnificent viaduct towers over the river weir. In the middle of the natural landscape, the man made monument compliments it well.'
+            content: 'This magnificent viaduct towers over the river weir. The monument now stands lost, away from civilisation. With its disuse, nature seems to have claimed the viaduct, and it now seems to belong with the trees around it.'
         }
     },
     {
@@ -80,7 +80,7 @@ const photos = [
         height: 4912,
         caption: {
             title: 'Low Force',
-            content: 'The waterfalls at low force.'
+            content: 'Just down the river from High Force stands the more gentler Low Force. Having carved its way through the surround forest, the two now compliment each other perfectly.'
         }
     },
     {
@@ -94,7 +94,7 @@ const photos = [
         height: 4197,
         caption: {
             title: 'Gibson\'s Cave',
-            content: 'Waterfall at Gibson\'s Cave.'
+            content: 'A short walk from Low Force is Gibson\'s Cave. This secluded spot is nestled in the woods and here the waterfall makes quite an impression, hidden away within the trees.'
         }
     },
     {
@@ -108,7 +108,7 @@ const photos = [
         height: 4912,
         caption: {
             title: 'Tees Valley',
-            content: 'Evening over Tees Valley.'
+            content: 'The tees river winds its way through the valley, and from this spot you get panoramic views of the entire valley. As the sun is setting, the light is just perfect.'
         }
     },
     {
@@ -122,7 +122,7 @@ const photos = [
         height: 3477,
         caption: {
             title: 'Tree',
-            content: 'A chance moment, driving home I passed this tree. The way the light struck the tree struck me, and the beautiful cloud structure completed the scene.'
+            content: 'A chance moment, driving home I passed this tree. The way the light struck the impressive shapes in the tree, and the beautiful cloud structure just represented up a clear winter\'s day.'
         }
     },
     {
@@ -136,7 +136,7 @@ const photos = [
         height: 2388,
         caption: {
             title: 'Hay Bale',
-            content: 'Walking through the fields, the hay bales add to the scene. The shapes of the hay bales are a perfect contrast to the lines of the fields.'
+            content: 'Walking through the fields, the hay bales always dominate the view at this time of year. The shapes and patterns on the hay bale always draw my eye.'
         }
     },
     {
@@ -150,7 +150,7 @@ const photos = [
         height: 1964,
         caption: {
             title: 'Fields',
-            content: 'Something about the fields.'
+            content: 'The fields and the buildings are such a great mix of shapes, rolling over the hills. Each field seems to have its own character with their different purposes.'
         }
     },
     {
