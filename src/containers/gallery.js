@@ -8,7 +8,24 @@ import Header from '../components/header';
 import Fade from '../components/fade';
 import Photos from '../photos';
 
-function preloadImage(src) {
+function getSrc(srcSet) {
+    const imageWidth = window.innerWidth;
+    var sources = srcSet.map(s => {
+        const split = s.split(' ');
+        const src = split[0];
+        const width = split[1].replace('w', '') * 1;
+        return {
+            src: src,
+            width: width
+        };
+    });
+    const filteredSources = sources.filter(s => s.width > imageWidth);
+    const sortedSources = filteredSources.sort((a,b) => a.width - b.width);
+    return sortedSources[0].src;
+}
+
+function preloadImage(srcSet) {
+    const src = getSrc(srcSet);
     const image = new Image();
     image.src = src;
 }
@@ -31,10 +48,25 @@ export default class GalleryContainer extends React.Component {
 
     componentDidMount() {
         if(Photos.length > 1) {
-            preloadImage(Photos[1].src);
+            preloadImage(Photos[1].srcSet);
         }
         if(Photos.length > 2) {
-            preloadImage(Photos[Photos.length -1].src);
+            preloadImage(Photos[Photos.length -1].srcSet);
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.currentImageIndex !== this.state.currentImageIndex) {
+            if((prevState.currentImageIndex < this.state.currentImageIndex && this.state.currentImageIndex !== 0)
+                || (this.state.currentImageIndex === 0 && prevState.currentImageIndex === Photos.length - 1))
+            {
+                preloadImage(Photos[(this.state.currentImageIndex + 1) % Photos.length].srcSet);
+            }
+            if((prevState.currentImageIndex > this.state.currentImageIndex && this.state.currentImageIndex !== Photos.length - 1)
+            || (this.state.currentImageIndex === Photos.length - 1 && prevState.currentImageIndex === 0))
+            {
+                preloadImage(Photos[(Photos.length + this.state.currentImageIndex - 1) % Photos.length].srcSet);
+            }
         }
     }
 
