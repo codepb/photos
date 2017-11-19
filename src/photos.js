@@ -10,7 +10,7 @@ const photos = [
         height: 3696,
         caption: {
             title: 'Tranquility',
-            content: 'The gentle sound of the waves lapping against the shore, and the beautiful calming colours formed by the twilight compliment it perfectly.'
+            content: 'The gentle sound of the waves lapping against the shore, and the beautiful calming colours formed by the twilight complement it perfectly.'
         }
     },
     {

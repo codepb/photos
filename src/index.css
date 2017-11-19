@@ -5,6 +5,10 @@ body {
   color: #222;
 }
 
+a {
+  color: #222;
+}
+
 .fade-enter {
   opacity: 0.01;
 }

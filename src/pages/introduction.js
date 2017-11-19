@@ -34,7 +34,7 @@ const Introduction = ({history}) => (
             <p>
                 This collection is designed to be viewed as presented. I recommend making your browser fullscreen
                 for the best experience (F11). Each piece is available for purchase, and this option will shortly be
-                coming to the website. Feel free to contact me in the meantime.
+                coming to the website. Feel free to contact me at <a href="mailto:contact@paulburgessphotography.com">contact@paulburgessphotography.com</a> in the meantime.
             </p>
             <p>
                 Please click anywhere to continue to the collection.
