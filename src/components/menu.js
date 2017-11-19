@@ -22,7 +22,7 @@ const styles = (theme) => ({
    
 });
 
-const Menu = ({classes, children, ...otherProps}) => (
+const Menu = ({classes, sheet, children, ...otherProps}) => (
     <nav className={classes.menu} {...otherProps}>
         <NavLink to="/gallery">Gallery</NavLink>
     </nav>
