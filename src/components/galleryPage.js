@@ -83,7 +83,7 @@ class GalleryPage extends React.Component {
     }
     
     render()  {
-        const {show, classes, sheet, children, image, ...props} = this.props;
+        const {show, classes, sheet, theme, children, image, ...props} = this.props;
     
         return (
             <CenterChildren key="image" className={typeof(show) === 'undefined' || show ? classNames(classes.gallery, classes.shown) : classes.gallery} onClick={props.onClick} {...props} >
