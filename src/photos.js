@@ -52,7 +52,7 @@ const photos = [
         height: 4912,
         caption: {
             title: 'Belmont Viaduct',
-            content: 'This magnificent viaduct towers over the river weir. The monument now stands lost, away from civilisation. With its disuse, nature seems to have claimed the viaduct, and it now seems to belong with the trees around it.'
+            content: 'This magnificent viaduct towers over the River Wear. The monument now stands lost, away from civilisation. With its disuse, nature seems to have claimed the viaduct, and it now seems to belong with the trees around it.'
         }
     },
     {
@@ -80,7 +80,7 @@ const photos = [
         height: 4912,
         caption: {
             title: 'Low Force',
-            content: 'Just down the river from High Force stands the more gentler Low Force. Having carved its way through the surround forest, the two now compliment each other perfectly.'
+            content: 'Just down the river from High Force stands the more gentler Low Force. Having carved its way through the surrounding forest, the two now complement each other perfectly.'
         }
     },
     {
@@ -108,7 +108,7 @@ const photos = [
         height: 4912,
         caption: {
             title: 'Tees Valley',
-            content: 'The tees river winds its way through the valley, and from this spot you get panoramic views of the entire valley. As the sun is setting, the light is just perfect.'
+            content: 'The River Tees winds its way through the valley, and from this spot you get panoramic views of the entire valley. As the sun is setting, the light is just perfect.'
         }
     },
     {
@@ -122,7 +122,7 @@ const photos = [
         height: 3477,
         caption: {
             title: 'Tree',
-            content: 'A chance moment, driving home I passed this tree. The way the light struck the impressive shapes in the tree, and the beautiful cloud structure just represented up a clear winter\'s day.'
+            content: 'A chance moment, driving home I passed this tree. The way the light struck the impressive shapes in the tree, and the beautiful cloud structure just represented a clear winter\'s day.'
         }
     },
     {
@@ -164,7 +164,7 @@ const photos = [
         height: 3216,
         caption: {
             title: 'Norwich Cathedral',
-            content: 'Cathedrals have the most magnificent architecture. I always love to look up and see the detail that goes into the ceilings, that often goes unseen.'
+            content: 'Cathedrals have the most magnificent architecture. I always love to look up and see the detail that goes into the ceilings, which often goes unseen.'
         }
     }
 ];
