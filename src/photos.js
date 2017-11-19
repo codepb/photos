@@ -164,7 +164,7 @@ const photos = [
         height: 3216,
         caption: {
             title: 'Norwich Cathedral',
-            content: 'Cathedral\'s have the most magnificent architecture. I always love to look up and see the detail that goes into the ceilings, that often goes unseen.'
+            content: 'Cathedrals have the most magnificent architecture. I always love to look up and see the detail that goes into the ceilings, that often goes unseen.'
         }
     }
 ];

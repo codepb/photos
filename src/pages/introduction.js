@@ -14,7 +14,7 @@ const Introduction = ({history}) => (
         letterSpacing: 0.5}}>
         <div style={{maxWidth: 800, margin: 40}}>
             <p>
-                Photography is a restrictive art. You are limited by what is infront of you.
+                Photography is a restrictive art. You are limited by what is in front of you.
                 You can't decide to exclude a part of the scene, or move the elements for a better
                 composition. Your canvas is the landscape, and your position in it dictates how the canvas is 
                 constructed. This to me is the beauty of photography. It is this limitation that requires
