@@ -7,11 +7,12 @@ import Caption, { CaptionTitle, CaptionBody } from './caption';
 const pageStyles = {
     gallery: {
         opacity: 0,
-        margin: '3vh 7vw 3vh 5vw',
-        width: '88vw',
+        margin: '3vh 50px 3vh 50px',
+        width: 'calc(100vw - 100px)',
         height: '94vh',
         visibility: 'hidden',
-        background: '#fff'
+        background: '#fff',
+        textAlign: 'center'
     },
     shown: {
         transition: '2s',
@@ -21,7 +22,7 @@ const pageStyles = {
     figure: {
         maxHeight: '100%',
         maxWidth: '100%',
-        margin: 0
+        margin: 0,
     },
     image: {
         maxWidth: '100%',
@@ -30,8 +31,7 @@ const pageStyles = {
     caption: {
         height: 200,
         width: '100%',
-        paddingLeft: 15,
-        paddingTop: 40,
+        paddingTop: 20,
         textAlign: 'left',
         boxSizing: 'border-box'
     },
@@ -41,6 +41,10 @@ const pageStyles = {
             maxWidth: 'calc(100% - 200px)',
             maxHeight: '90vh'
         }, 
+        gallery: { 
+           margin: '3vh 7vw 3vh 5vw',
+           width: '88vw'
+        },
         caption: {
             float:'left',
             width: 200,
@@ -73,7 +77,7 @@ class GalleryPage extends React.Component {
 
     updateSize = () => {
         const isLandscape = window.innerWidth >= window.innerHeight;
-        const componentWidth = isLandscape ? (window.innerWidth * 0.88) - 200 : window.innerWidth * 0.88;
+        const componentWidth = isLandscape ? (window.innerWidth * 0.88) - 200 : window.innerWidth - 100;
         const componentHeight = isLandscape ? (window.innerHeight * 0.94) * 0.9 : ((window.innerHeight * 0.94) * 0.9) - 200;
         const ratio = componentWidth / componentHeight;
         const imageRatio = this.props.image.width / this.props.image.height;

@@ -12,7 +12,7 @@ const styles = {
     }
 }
 
-const Hideable = ({show, classes, showInitially, children, ...otherProps}) => {    
+const Hideable = ({show, classes, sheet, showInitially, children, ...otherProps}) => {    
     return(
         <div className={show ? classes.show : classes.hide} {...otherProps}>
             {children}
