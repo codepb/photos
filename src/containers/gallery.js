@@ -90,14 +90,13 @@ export default class GalleryContainer extends React.Component {
     render() {
         return (
             <div tabIndex="1" onKeyDown={this.handleKeyPress} style={{position: 'relative', height: '100vh'}}>
-            <Swiper onSwipeLeft={this.previousImage} onSwipeRight={this.nextImage} style={{position: 'relative', height: '100vh'}}> 
+            <Swiper onSwipeLeft={this.nextImage} onSwipeRight={this.previousImage} style={{position: 'relative', height: '100vh'}}> 
                 <TransitionGroup>
                 <Fade key={Photos[this.state.currentImageIndex].src}>
                     <GalleryPage key={`${Photos[this.state.currentImageIndex].src}-shown`} image={Photos[this.state.currentImageIndex]} style={{position: 'absolute', top: 0, left: 0}}/>
                 </Fade>
                 </TransitionGroup>
                 <ShowOnMouseMove style={{position: 'absolute', left: 0, top:0, height: '100vh', width: '100vw'}} showInitially={true}>
-                    
                     <CenterChildren style={{position: 'absolute', right: 0, height: '100%', width: 40}} >
                         <span style={{fontSize: 40, cursor: 'pointer'}} onClick={this.nextImage}>&gt;</span>
                     </CenterChildren>
@@ -105,8 +104,7 @@ export default class GalleryContainer extends React.Component {
                         <span style={{fontSize: 40, cursor: 'pointer'}} onClick={this.previousImage}>&lt;</span>
                     </CenterChildren>
                     <Header style={{position: 'absolute', top:0, left: 0}} />
-                </ShowOnMouseMove>
-                
+                </ShowOnMouseMove>                
             </Swiper>
             </div>)
     }
