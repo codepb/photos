@@ -126,6 +126,20 @@ const photos = [
         }
     },
     {
+        src: '/photos/Snow.jpg',
+        srcSet: [
+            '/photos/Snow-2048.jpg 2048w',
+            '/photos/Snow-1024.jpg 1024w',
+            '/photos/Snow-512.jpg 512w'
+        ],
+        width: 5616,
+        height: 3744,
+        caption: {
+            title: 'Trees in the Snow',
+            content: 'I love the snow. It provides such a clean, peaceful canvas and turns ordinary scenes into something magical.'
+        }
+    },
+    {
         src: '/photos/HayBale.jpg',
         srcSet: [
             '/photos/HayBale-2048.jpg 2048w',
@@ -151,20 +165,6 @@ const photos = [
         caption: {
             title: 'Fields',
             content: 'The fields and the buildings are such a great mix of shapes, rolling over the hills. Each field seems to have its own character with their different purposes.'
-        }
-    },
-    {
-        src: '/photos/NorwichCathedral.jpg',
-        srcSet: [
-            '/photos/NorwichCathedral-2048.jpg 2048w',
-            '/photos/NorwichCathedral-1024.jpg 1024w',
-            '/photos/NorwichCathedral-512.jpg 512w'
-        ],
-        width: 4824,
-        height: 3216,
-        caption: {
-            title: 'Norwich Cathedral',
-            content: 'Cathedrals have the most magnificent architecture. I always love to look up and see the detail that goes into the ceilings, which often goes unseen.'
         }
     }
 ];
