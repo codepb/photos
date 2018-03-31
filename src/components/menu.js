@@ -13,6 +13,8 @@ const styles = (theme) => ({
             textDecoration: 'none',
             textTransform: 'uppercase',
             verticalAlign: 'baseline',
+            marginLeft: 5,
+            marginRight: 5,
             '&:hover,&.active': {
                 color: '#222',
                 fontWeight: 500
@@ -25,6 +27,7 @@ const styles = (theme) => ({
 const Menu = ({classes, sheet, theme, children, ...otherProps}) => (
     <nav className={classes.menu} {...otherProps}>
         <NavLink to="/gallery">Gallery</NavLink>
+        <NavLink to="/order">Purchase</NavLink>
     </nav>
 )
 

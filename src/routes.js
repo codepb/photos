@@ -6,8 +6,10 @@ import GalleryPage from './pages/galleryPage';
 import Home from './pages/home';
 import Introduction from './pages/introduction';
 import GalleryOverview from './pages/galleryOverview';
+import OrderBook from './pages/orderBook';
 
 import Fade from './components/fade';
+
 
 export const Routes = ({location}) => (
 <TransitionGroup>
@@ -17,6 +19,7 @@ export const Routes = ({location}) => (
         <Route exact path="/introduction" component={Introduction} />
         <Route exact path="/gallery" component={GalleryOverview} />
         <Route exact path="/gallery/:index" component={GalleryPage} />
+        <Route exact path="/order" component={OrderBook} />
     </Switch>
 </Fade>
 </TransitionGroup>);

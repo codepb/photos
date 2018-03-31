@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Menu from './menu';
 
-const Header = (style) => {
+const Header = ({style}) => {
     const headerStyle = {
         ...style,
         display: 'flex',

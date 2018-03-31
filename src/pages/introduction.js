@@ -33,8 +33,8 @@ const Introduction = ({history}) => (
             </p>
             <p>
                 This collection is designed to be viewed as presented. I recommend making your browser fullscreen
-                for the best experience (F11). Each piece is available for purchase, and this option will shortly be
-                coming to the website. Feel free to contact me at <a href="mailto:contact@paulburgessphotography.com">contact@paulburgessphotography.com</a> in the meantime.
+                for the best experience (F11). The entire collection is available to purchase as a hardback book. Please
+                follow the purchase link in the menu on the next page to order.
             </p>
             <p>
                 Please click anywhere to continue to the collection.

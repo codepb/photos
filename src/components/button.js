@@ -7,7 +7,8 @@ const buttonStyles = {
         color: '#fff',
         textAlign: 'center',
         padding: 10,
-        fontSize: 14
+        fontSize: 14,
+        cursor: 'pointer'
     }
 }
 

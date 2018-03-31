@@ -103,7 +103,7 @@ export default class GalleryContainer extends React.Component {
                     <CenterChildren style={{position: 'absolute', left: 0, height: '100%', width: 40}}>
                         <span style={{fontSize: 40, cursor: 'pointer'}} onClick={this.previousImage}>&lt;</span>
                     </CenterChildren>
-                    <Header style={{position: 'absolute', top:0, left: 0}} />
+                    <Header style={{position: 'relative'}} />
                 </ShowOnMouseMove>                
             </Swiper>
             </div>)
